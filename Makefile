@@ -6,7 +6,7 @@ NAME		:= ft_objdump-d
 
 CC			:=	clang
 
-CFLAGS		:= -Wall -Wextra -Werror -O0
+CFLAGS		:= -Wall -Wextra -Werror -O0 -g
 
 VERBOSE		?=	0
 
