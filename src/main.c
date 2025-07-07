@@ -62,7 +62,8 @@ od_elf_close(Elf *file)
 
 #define	SHIFT(ac, av)	(ac--, *argv++)
 
-int main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
 	const char	*exe = SHIFT(argc, argv);
 
