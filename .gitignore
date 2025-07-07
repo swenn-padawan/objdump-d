@@ -1,4 +1,9 @@
 *.o
-ft_objdump-d
-.cache
+*.d
+*.a
+*.so
+a.out
+.cache/
+.build/
+objdump-d
 compile-commands.json
