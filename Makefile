@@ -5,7 +5,7 @@
 NAME		:=	objdump-d
 
 CC			:=	clang
-CFLAGS		:=	-Wall -Wextra -Werror -MMD -MP
+CFLAGS		:=	-Wall -Wextra -MMD -MP -g
 
 VERBOSE		?=	0
 ifeq ($(VERBOSE), 1)
