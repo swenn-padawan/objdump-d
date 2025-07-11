@@ -2,7 +2,10 @@
  * elf.c
  */
 
+#include "celf.h"
 #include <objdump-d.h>
+#include <stdint.h>
+#include <sys/types.h>
 
 RawData
 od_elf_map(int fd, uint64_t size)
@@ -66,18 +69,22 @@ od_elf_section_headers(Elf *file)
 	return (file->raw + offset);
 }
 
+//SHT_SYMTAB: Symbol table. (Static symbol table)
 RawData
 od_elf_symtab(Elf *file)
 {
-	(void) file;
-	return (NULL);
+	ELF64_Shdr	*header = (ELF64_Shdr *)file->raw;
+	uint64_t	offset = header->sh_offset;
+	return (file->raw + offset);
 }
 
+//SHT_DYNSYM Dynamic linker symbol table. (Dynamic-linker-used symbol table)
 RawData
 od_elf_dynsym(Elf *file)
 {
-	(void) file;
-	return (NULL);
+	ELF64_Shdr	*header = (ELF64_Shdr *)file->raw;
+	uint64_t	offset = header->sh_offset;
+	return (file->raw + offset);
 }
 
 RawData
@@ -87,6 +94,8 @@ od_elf_rel(Elf *file)
 	return (NULL);
 }
 
+
+//SHT_RELA: Relocation entries with addends.
 RawData
 od_elf_rela(Elf *file)
 {

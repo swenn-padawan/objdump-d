@@ -7,6 +7,8 @@
 
 # define PACKED	__attribute__((packed))
 
+#include <stdint.h>
+
 /**
  * @struct	ELF_Ident.
  *

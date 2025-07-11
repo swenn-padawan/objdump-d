@@ -6,15 +6,31 @@
    "-Wall",
    "-Wextra",
    "-Werror",
-   "-O0",
-   "-g",
-   "-I",
-   "includes",
+   "-MMD",
+   "-MP",
+   "-Iinclude",
    "-o",
-   ".objs/srcs/main.o",
+   ".build/src/main.o",
    "-c",
-   "srcs/main.c"
+   "src/main.c"
   ],
-  "file": "srcs/main.c"
+  "file": "src/main.c"
+ },
+ {
+  "directory": "/home/stetrel/42spe/objdump-d",
+  "arguments": [
+   "clang",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-MMD",
+   "-MP",
+   "-Iinclude",
+   "-o",
+   ".build/src/elf.o",
+   "-c",
+   "src/elf.c"
+  ],
+  "file": "src/elf.c"
  }
 ]
